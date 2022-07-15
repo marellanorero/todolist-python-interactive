@@ -19,10 +19,7 @@ def add_new_todo():
     request_body = request.data
     decoded_object = json.loads(request_body)
     print("Incoming request with the following body", decoded_object)
-    return 'Response for the POST todo'
-
-
-
+    return jsonify(..., decoded_object)
 
 
 
