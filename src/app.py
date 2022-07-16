@@ -22,10 +22,8 @@ def add_new_todo():
 
 @app.route('/todos/<int:position>', methods=['DELETE'])
 def delete_todo(position):
-    positionFound = todos.index(position)
-    todos.remove(positionFound[0])
-    return jsonify(todos)
-
+    json_text = jsonify(todos.pop(position))
+    return json_text
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=3245, debug=True)
