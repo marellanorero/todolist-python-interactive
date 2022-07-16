@@ -22,8 +22,8 @@ def add_new_todo():
 
 @app.route('/todos/<int:position>', methods=['DELETE'])
 def delete_todo(position):
-    todoFound = [todo for todo in todos if todo['label'] == position]
-    todos.remove(todoFound[0])
+    positionFound = todos.index(position)
+    todos.remove(positionFound[0])
     return jsonify(todos)
 
 
